@@ -5,7 +5,7 @@ import "../addrestaurant/add.css";
 import toast from "react-hot-toast";
 
 const Edit = () => {
-  const restaurants = {
+  const initialRestaurant = {
     name: "",
     type: "",
     location: "",
@@ -15,12 +15,11 @@ const Edit = () => {
 
   const { id } = useParams();
   const navigate = useNavigate();
-  const [restaurant, setRestaurant] = useState(restaurants);
+  const [restaurant, setRestaurant] = useState(initialRestaurant);
 
   const inputChangeHandler = (e) => {
     const { name, value } = e.target;
     setRestaurant({ ...restaurant, [name]: value });
-    console.log(restaurant);
   };
 
   useEffect(() => {
@@ -31,6 +30,7 @@ const Edit = () => {
       })
       .catch((error) => {
         console.log(error);
+        toast.error("Failed to load restaurant data", { position: "top-right" });
       });
   }, [id]);
 
@@ -42,14 +42,17 @@ const Edit = () => {
         toast.success(response.data.msg, { position: "top-right" });
         navigate("/");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        toast.error("Failed to update restaurant", { position: "top-right" });
+      });
   };
 
   return (
     <div className="addRestaurant">
       <Link to={"/"}>Back</Link>
       <h3>Update user</h3>
-      <form className="addUserForm" onSubmit={submitForm}>
+      <form className="addRestaurantForm" onSubmit={submitForm}>
         <div className="inputGroup">
           <label htmlFor="name">Name</label>
           <input

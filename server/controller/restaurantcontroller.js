@@ -1,4 +1,4 @@
-import restaurant from "../model/restaurantmodel.js"
+import restaurant from "../model/restaurantModel.js"
 export const createRestaurant = async(req,res) =>{
     try{
         const restaurantData = restaurant(req.body)
@@ -58,4 +58,16 @@ export const updateRestaurant = async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   };
-
+  export const getOne = async(req,res)=>{
+    try{
+        const id=req.params.id;
+        const restaurantData=await restaurant.findById(id)
+    if(!restaurantData){
+        return res.status(404).json({msg:"Restaurant data not found"});
+        }
+    res.status(200).json(restaurantData);
+    }
+    catch(error){
+        res.status(500).json({error:error.message})
+      }
+};

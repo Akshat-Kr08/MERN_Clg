@@ -50,73 +50,75 @@ const Edit = () => {
 
   return (
     <div className="addRestaurant">
-      <Link to={"/"}>Back</Link>
-      <h3>Update user</h3>
-      <form className="addRestaurantForm" onSubmit={submitForm}>
-        <div className="inputGroup">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            value={restaurant.name}
-            onChange={inputChangeHandler}
-            id="name"
-            name="name"
-            autoComplete="off"
-            placeholder="name"
-          />
-        </div>
-        <div className="inputGroup">
-          <label htmlFor="type">Type</label>
-          <input
-            type="text"
-            value={restaurant.type}
-            onChange={inputChangeHandler}
-            id="type"
-            name="type"
-            autoComplete="off"
-            placeholder="Type"
-          />
-        </div>
-        <div className="inputGroup">
-          <label htmlFor="location">Location</label>
-          <input
-            type="text"
-            value={restaurant.location}
-            onChange={inputChangeHandler}
-            id="location"
-            name="location"
-            autoComplete="off"
-            placeholder="Location"
-          />
-        </div>
-        <div className="inputGroup">
-          <label htmlFor="rating">Rating</label>
-          <input
-            type="text"
-            value={restaurant.rating}
-            onChange={inputChangeHandler}
-            id="rating"
-            name="rating"
-            autoComplete="off"
-            placeholder="Rating"
-          />
-        </div>
-        <div className="inputGroup">
-          <label htmlFor="Top Food">Top Food</label>
-          <input
-            type="text"
-            value={restaurant.top_food}
-            onChange={inputChangeHandler}
-            id="top_food"
-            name="top_food"
-            autoComplete="off"
-            placeholder="Top Food"
-          />
-        </div>
-        <div className="inputGroup">
-          <button type="submit">UPDATE RESTAURANT</button>
-        </div>
-      </form>
+      <Link to={"/"} className="back-link">Back</Link>
+      <div className="form-box">
+        <h3>Update Restaurant</h3>
+        <form className="addRestaurantForm" onSubmit={submitForm}>
+          <div className="inputGroup">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              value={restaurant.name}
+              onChange={inputChangeHandler}
+              id="name"
+              name="name"
+              autoComplete="off"
+              placeholder="Enter Name"
+            />
+          </div>
+          <div className="inputGroup">
+            <label htmlFor="type">Type</label>
+            <input
+              type="text"
+              value={restaurant.type}
+              onChange={inputChangeHandler}
+              id="type"
+              name="type"
+              autoComplete="off"
+              placeholder="Enter Type"
+            />
+          </div>
+          <div className="inputGroup">
+            <label htmlFor="location">Location</label>
+            <input
+              type="text"
+              value={restaurant.location}
+              onChange={inputChangeHandler}
+              id="location"
+              name="location"
+              autoComplete="off"
+              placeholder="Enter Location"
+            />
+          </div>
+          <div className="inputGroup">
+            <label htmlFor="rating">Rating</label>
+            <input
+              type="text"
+              value={restaurant.rating}
+              onChange={inputChangeHandler}
+              id="rating"
+              name="rating"
+              autoComplete="off"
+              placeholder="Enter Rating"
+            />
+          </div>
+          <div className="inputGroup">
+            <label htmlFor="top_food">Top Food</label>
+            <input
+              type="text"
+              value={restaurant.top_food}
+              onChange={inputChangeHandler}
+              id="top_food"
+              name="top_food"
+              autoComplete="off"
+              placeholder="Enter Top Food"
+            />
+          </div>
+          <div className="inputGroup">
+            <button type="submit">UPDATE RESTAURANT</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

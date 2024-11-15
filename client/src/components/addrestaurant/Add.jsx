@@ -7,10 +7,10 @@ import './add.css';
 const Add = () => {
     const restaurants = {
         name: "",
-        Type: "",
-        Location: "",
-        Rating: "",
-        Top_food: ""
+        type: "",
+        location: "",
+        rating: "",
+        top_food: ""
     };
 
     const [restaurant, setRestaurant] = useState(restaurants);
@@ -38,23 +38,53 @@ const Add = () => {
             <form onSubmit={submitForm}>
                 <div>
                     <label htmlFor='name'>Name</label>
-                    <input type='text' onChange={inputHandler} id='name' name='name' placeholder='Enter the Name of restaurant' />
+                    <input 
+                        type='text' 
+                        onChange={inputHandler} 
+                        id='name' 
+                        name='name' 
+                        placeholder='Enter the Name of restaurant' 
+                    />
                 </div>
                 <div>
                     <label htmlFor='type'>Type</label>
-                    <input type='text' onChange={inputHandler} id='type' name='type' placeholder='Type' />
+                    <input 
+                        type='text' 
+                        onChange={inputHandler} 
+                        id='type' 
+                        name='type' 
+                        placeholder='Type' 
+                    />
                 </div>
                 <div>
                     <label htmlFor='location'>Location</label>
-                    <input type='text' onChange={inputHandler} id='location' name='location' placeholder='Location' />
+                    <input 
+                        type='text' 
+                        onChange={inputHandler} 
+                        id='location' 
+                        name='location' 
+                        placeholder='Location' 
+                    />
                 </div>
                 <div>
                     <label htmlFor='rating'>Rating</label>
-                    <input type='number' onChange={inputHandler} id='rating' name='rating' placeholder='Rating' />
+                    <input 
+                        type='number' 
+                        onChange={inputHandler} 
+                        id='rating' 
+                        name='rating' 
+                        placeholder='Rating' 
+                    />
                 </div>
                 <div>
                     <label htmlFor='top_food'>Top Food</label>
-                    <input type='text' onChange={inputHandler} id='top_food' name='top_food' placeholder='Top food' />
+                    <input 
+                        type='text' 
+                        onChange={inputHandler} 
+                        id='top_food' 
+                        name='top_food' 
+                        placeholder='Top food' 
+                    />
                 </div>
                 <div>
                     <button type="submit">ADD RESTAURANT</button>
